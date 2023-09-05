@@ -1,6 +1,7 @@
 import contextlib
 import asyncio 
 from aiogram.types import ChatJoinRequest, InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.utils.markdown import hlink
 from aiogram import Bot, Dispatcher, F
 import logging
 
@@ -11,8 +12,8 @@ CHANNEL_ID =  -1001712236318
 ADMIN_ID = 1889004772
 async def approve_request (chat_join: ChatJoinRequest, bot: Bot):
    msg= f""Дорогой друг, поздравляем тебя с приобретением подписки на закрытое сообщество PROFIT.\n\n"
-        "Вы можете войти в канал: "
-        "<a href='https://t.me/+YigHdJ6h1ck3YmQy'>https://t.me/globalprofit</a>""
+        "Вы можете войти в канал: hlink('https://t.me/globalprofit', 'https://t.me/+YigHdJ6h1ck3YmQy')"
+       
    button = InlineKeyboardButton(text='ВСТУПИТЬ', url='https://t.me/+YigHdJ6h1ck3YmQy', disable_web_page_preview=True)   
    markup = InlineKeyboardMarkup(inline_keyboard=[[button]])
 
